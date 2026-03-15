@@ -104,6 +104,14 @@ python agents/s12_worktree_task_isolation.py  # Full progression endpoint
 python agents/s_full.py               # Capstone: all mechanisms combined
 ```
 
+To run any lesson through Spark/Ollama instead of Anthropic:
+
+```sh
+source ~/.zshrc
+spark-on
+LEARN_CC_BACKEND=ollama OLLAMA_BASE_URL=http://127.0.0.1:11435 python agents/s02_tool_use.py
+```
+
 ### Web Platform
 
 Interactive visualizations, step-through diagrams, source viewer, and documentation.

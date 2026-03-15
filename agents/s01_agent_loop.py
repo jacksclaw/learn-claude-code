@@ -69,7 +69,11 @@ def load_codex_openai_key() -> Optional[str]:
 
 
 def detect_backend() -> str:
-    forced = os.getenv("S01_BACKEND")
+    forced = (
+        os.getenv("LEARN_CC_BACKEND")
+        or os.getenv("S01_BACKEND")
+        or os.getenv("AGENT_BACKEND")
+    )
     if forced in {"anthropic", "openai", "ollama"}:
         return forced
     if os.getenv("OLLAMA_BASE_URL"):
